@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hangout Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      display: flex;
+      height: 100vh;
+    }
+    .left {
+  flex: 1;
+  background-color: #ffe6f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.me-img {
+  width: 80%;
+  max-width: 300px;
+  border-radius: 25px;
+  transition: transform 0.5s ease;
+}
+
+.me-img:hover {
+  transform: scale(1.1);
+}
+
+    .right {
+      flex: 1;
+      background-color: #ffe6f0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      text-align: center;
+    }
+    .right h2 {
+      font-size: 2em;
+      color: #ff66b2;
+      margin-bottom: 10px;
+    }
+    .iloveyou {
+      font-size: 2.5em;
+      color: #ff4da6;
+      margin-bottom: 30px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+      width: 250px;
+    }
+    button {
+      background-color: #ff66b2;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="left">
+  <img src="me.jpg" alt="me" class="me-img" />
+  </div>
+
+  <div class="right">
+    <div class="iloveyou">I love you muah</div>
+    <h2>Yay! Fill this out </h2>
+    <form action="https://formsubmit.co/fc8209d508e390051fd87ba2b626b214" method="POST">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="date" name="date" required>
+      <input type="time" name="time" required>
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="thankyou.html">
+      <textarea name="extra" placeholder="Anything else you wanna add?" rows="4" style="width: 250px; border-radius: 10px; padding: 10px;"></textarea>
+
+      <button type="submit">Send 💌</button>
+    </form>
+  </div>
+</body>
+</html>

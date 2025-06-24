@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hangout?</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background-color: #ffe6f0;
+      text-align: center;
+      padding-top: 80px;
+    }
+    h1 {
+      color: #ff4da6;
+      font-size: 2.5em;
+    }
+    button {
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 18px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+    }
+    #yes {
+      background-color: #ff66b2;
+      color: white;
+    }
+    #no {
+      background-color: gray;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <h1>Would you like to hang out with me? 🥺👉👈</h1>
+  <div>
+    <button id="yes">Yes 💖</button>
+    <button id="no">No 🙈</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    const noBtn = document.getElementById('no');
+    const yesBtn = document.getElementById('yes');
+
+    noBtn.addEventListener('mouseover', () => {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 100);
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+
+    yesBtn.addEventListener('click', () => {
+      confetti({
+        particleCount: 200,
+        spread: 100,
+        origin: { y: 0.6 }
+      });
+      setTimeout(() => {
+        window.location.href = 'form.html';
+      }, 1200);
+    });
+  </script>
+</body>
+</html>
